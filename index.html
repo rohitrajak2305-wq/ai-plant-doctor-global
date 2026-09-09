@@ -2,96 +2,22 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Plants Doctor - Global</title>
-<style>
-body{margin:0;background:#eaf7ec;font-family:sans-serif}
-.card{max-width:500px;margin:20px auto;background:#fff;border-radius:16px;padding:20px;box-shadow:0 2px 10px rgba(0,0,0,.05)}
-.title{color:#14532d;font-size:22px;font-weight:bold;text-align:center}
-.sub{font-size:13px;text-align:center;margin:4px 0 15px}
-.box{border:2px dashed #22c55e;border-radius:14px;padding:25px;text-align:center}
-.btn{background:#16a34a;color:#fff;border:none;padding:14px 0;width:100%;border-radius:28px;font-size:18px;font-weight:bold}
-.pay{display:block;padding:12px;border-radius:10px;color:#fff;text-decoration:none;font-weight:bold;margin:8px 0;text-align:center}
-#result{display:none;margin-top:20px}
-.locked-content{display:none}
-</style>
-</head>
-<body>
-<div class="card">
-<div class="title">🌱 Plants Doctor</div>
-<div class="sub">🇮🇳 India + 🇺🇸 USA - Global</div>
-
-<div class="box">
-<input type="file" id="file" accept="image/*" hidden>
-<button class="btn" onclick="document.getElementById('file').click()">📸 Photo Lo</button>
-<p id="fname" style="font-size:11px;color:#666;margin-top:8px"></p>
-</div>
-
-<button class="btn" style="margin-top:20px;background:#15803d" onclick="analyze()">🔬 Check Plant</button>
-
-<div id="result">
-<div style="background:#fefce8;padding:12px;border-radius:10px;margin-top:15px">
-<b>🔍 Diagnosis: Fungal Blight 92%</b><br>
-<span style="font-size:12px">Pura ilaj niche lock hai</span>
-</div>
-
-<div id="premiumBox" style="border:2px solid #16a34a;padding:14px;border-radius:14px;background:#f0fdf4;margin-top:12px;text-align:center">
-<h3 style="margin:5px">🔒 Pura Ilaaj Lock Hai</h3>
-<a class="pay" style="background:#16a34a" href="upi://pay?pa=6264389870-2@ybl&pn=Rohit%20Kumar&am=199&cu=INR&tn=PlantDoctor">🇮🇳 ₹199 UPI Pay</a>
-<a class="pay" style="background:#0070ba" href="https://www.paypal.me/RohitKumar313807/4.99" target="_blank">🇺🇸 $4.99 PayPal Pay</a>
-<p style="font-size:9px">UPI: 6264389870-2@ybl | Screenshot 6264389870 pe bhejo</p>
-</div>
-
-<div class="locked-content" style="background:#dcfce7;padding:14px;border-radius:12px;margin-top:12px">
-<b>✅ Treatment (Owner Free)</b><br>
-<span style="font-size:13px">Dawa: Saaf Fungicide 2gm / 1L<br>Tarika: Shaam ko 7 din spray</span>
-<div style="margin-top:12px;background:#fff3e0;padding:10px;border-radius:10px">
-<b style="font-size:12px">🛒 Amazon Se Kharido - Support Karo</b>
-<a class="pay" style="background:#FF9900;color:#000;font-size:13px" href="https://www.amazon.in/s?k=Saaf+Fungicide&tag=onamzrohit048-21" target="_blank">🇮🇳 Amazon.in - onamzrohit048-21</a>
-<a class="pay" style="background:#FF9900;color:#000;font-size:13px" href="https://www.amazon.com/s?k=Fungicide+for+Plants&tag=ruhu20-20" target="_blank">🇺🇸 Amazon.com - ruhu20-20</a>
-</div>
-</div>
-</div>
-</div>
-
-<script>
-const SECRET="rohit313807";
-if(new URLSearchParams(location.search).get('owner')===SECRET){localStorage.setItem('isOwner','true');history.replaceState({},'',location.pathname);}
-document.getElementById('file').addEventListener('change',e=>{document.getElementById('fname').innerText=e.target.files[0].name;});
-function analyze(){
- if(!document.getElementById('file').files[0]){alert('Pehle Photo Lo!');return;}
- document.getElementById('result').style.display='block';
- if(localStorage.getItem('isOwner')==='true'){
-  document.getElementById('premiumBox').style.display='none';
-  document.querySelectorAll('.locked-content').forEach(x=>x.style.display='block');
- }
- window.scrollTo(0,document.body.scrollHeight);
-}
-if(localStorage.getItem('isOwner')==='true'){document.getElementById('result').style.display='block';}
-</script>
-</body>
-</html>
-<!-- 1. Button -->
-<div style="text-align:right">
-<button id="btnHi" onclick="setLang('hi')" style="background:#16a34a;color:#fff;padding:5px 12px;border-radius:15px;border:1px solid #16a34a">हिंदी</button>
-<button id="btnEn" onclick="setLang('en')" style="background:#fff;color:#16a34a;padding:5px 12px;border-radius:15px;border:1px solid #16a34a">English</button>
-</div>
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Plants Doctor - Kalpana Maravi and Rohit</title>
 <style>
 body{margin:0;background:#eaf7ec;font-family:sans-serif}
-.card{max-width:500px;margin:20px auto;background:#fff;border-radius:16px;padding:20px;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+.card{max-width:500px;margin:20px auto;background:#fff;border-radius:16px;padding:20px;box-shadow:0 2px 10px rgba(0,0,0,.1)}
 .lang{text-align:right;margin-bottom:8px}
-.lang button{border:1px solid #16a34a;padding:5px 12px;border-radius:20px;font-weight:bold;margin-left:5px;cursor:pointer}
+.lang button{border:1.5px solid #16a34a;padding:5px 12px;border-radius:20px;font-weight:bold;margin-left:5px;cursor:pointer}
 .lang button.active{background:#16a34a;color:#fff}
 .lang button.inactive{background:#fff;color:#16a34a}
 .title{color:#14532d;font-size:22px;font-weight:bold;text-align:center}
-.owner{font-size:12px;text-align:center;color:#666;background:#f0fdf4;padding:6px;border-radius:20px;margin-bottom:12px}
+.owner{font-size:12px;text-align:center;color:#444;background:#f0fdf4;padding:6px;border-radius:20px;margin:6px 0;border:1px solid #dcfce7}
 .sub{font-size:13px;text-align:center;margin:4px 0 15px}
 .box{border:2px dashed #22c55e;border-radius:14px;padding:25px;text-align:center}
 .btn{background:#16a34a;color:#fff;border:none;padding:14px 0;width:100%;border-radius:28px;font-size:18px;font-weight:bold;cursor:pointer}
+.pay{display:block;padding:12px;border-radius:10px;color:#fff;text-decoration:none;font-weight:bold;margin:8px 0;text-align:center}
+#result{display:none;margin-top:20px}
+.locked-content{display:none}
 </style>
 </head>
 <body>
@@ -104,7 +30,7 @@ body{margin:0;background:#eaf7ec;font-family:sans-serif}
 
 <div class="title">🌱 Plants Doctor</div>
 <div class="owner">👑 Owner: Kalpana Maravi and Rohit</div>
-<div class="sub" id="tSub">Photo bhejo, ilaj pao</div>
+<div class="sub" id="tSub">🇮🇳 India + 🇺🇸 USA - Photo bhejo, ilaj pao</div>
 
 <div class="box">
 <input type="file" id="file" accept="image/*" hidden>
@@ -112,32 +38,77 @@ body{margin:0;background:#eaf7ec;font-family:sans-serif}
 <p id="fname" style="font-size:11px;color:#666;margin-top:8px"></p>
 </div>
 
-<button class="btn" style="margin-top:20px;background:#15803d" id="tCheck" onclick="alert(curLang=='hi'?'Photo Check Ho Gayi!':'Photo Checked!')">🔬 Check Plant</button>
+<button class="btn" style="margin-top:20px;background:#15803d" id="tCheck" onclick="analyze()">🔬 Check Plant</button>
 
-<div style="text-align:center;margin-top:20px;font-size:10px;color:#888" id="tFoot">© Owner: Kalpana Maravi and Rohit</div>
+<div id="result">
+<div style="background:#fefce8;padding:12px;border-radius:10px;margin-top:15px">
+<b id="tDiag">🔍 Diagnosis: Fungal Blight 92%</b><br>
+<span style="font-size:12px" id="tLockNote">Pura ilaj niche lock hai</span>
+</div>
+
+<div id="premiumBox" style="border:2px solid #16a34a;padding:14px;border-radius:14px;background:#f0fdf4;margin-top:12px;text-align:center">
+<h3 style="margin:5px" id="tLockTitle">🔒 Pura Ilaaj Lock Hai</h3>
+<a class="pay" style="background:#16a34a" href="upi://pay?pa=6264389870-2@ybl&pn=Kalpana%20Maravi%20and%20Rohit&am=199&cu=INR&tn=PlantDoctor">🇮🇳 ₹199 UPI Pay</a>
+<a class="pay" style="background:#0070ba" href="https://www.paypal.me/RohitKumar313807/4.99" target="_blank">🇺🇸 $4.99 PayPal Pay</a>
+<p style="font-size:9px" id="tUpiNote">UPI: 6264389870-2@ybl | Screenshot 6264389870 pe bhejo</p>
+</div>
+
+<div class="locked-content" style="background:#dcfce7;padding:14px;border-radius:12px;margin-top:12px">
+<b id="tTreat">✅ Treatment (Owner Free)</b><br>
+<span style="font-size:13px" id="tTreatText">Dawa: Saaf Fungicide 2gm / 1L<br>Tarika: Shaam ko 7 din spray</span>
+<div style="margin-top:12px;background:#fff3e0;padding:10px;border-radius:10px">
+<b style="font-size:12px" id="tShop">🛒 Amazon Se Kharido - Support Karo</b>
+<a class="pay" style="background:#FF9900;color:#000;font-size:13px" href="https://www.amazon.in/s?k=Saaf+Fungicide&tag=onamzrohit048-21" target="_blank">🇮🇳 Amazon.in</a>
+<a class="pay" style="background:#FF9900;color:#000;font-size:13px" href="https://www.amazon.com/s?k=Fungicide+for+Plants&tag=ruhu20-20" target="_blank">🇺🇸 Amazon.com</a>
+</div>
+</div>
+</div>
+<div style="text-align:center;margin-top:15px;font-size:10px;color:#888" id="tFoot">© Owner: Kalpana Maravi and Rohit</div>
 </div>
 
 <script>
+const SECRET="rohit313807";
 let curLang='hi';
+if(new URLSearchParams(location.search).get('owner')===SECRET){localStorage.setItem('isOwner','true');history.replaceState({},'',location.pathname);}
+
+document.getElementById('file').addEventListener('change',e=>{document.getElementById('fname').innerText=e.target.files[0].name;});
+
+function analyze(){
+ if(!document.getElementById('file').files[0]){alert(curLang=='hi'?'Pehle Photo Lo!':'Please Take Photo First!');return;}
+ document.getElementById('result').style.display='block';
+ if(localStorage.getItem('isOwner')==='true'){
+  document.getElementById('premiumBox').style.display='none';
+  document.querySelectorAll('.locked-content').forEach(x=>x.style.display='block');
+ }
+ window.scrollTo(0,document.body.scrollHeight);
+}
+
 function setLang(l){
  curLang=l;
- document.getElementById('btnHi').className = l=='hi'? 'active' : 'inactive';
- document.getElementById('btnEn').className = l=='en'? 'active' : 'inactive';
+ document.getElementById('btnHi').className=l=='hi'?'active':'inactive';
+ document.getElementById('btnEn').className=l=='en'?'active':'inactive';
  if(l=='hi'){
-  document.getElementById('tSub').innerText='Photo bhejo, ilaj pao';
+  document.getElementById('tSub').innerText='🇮🇳 India + 🇺🇸 USA - Photo bhejo, ilaj pao';
   document.getElementById('tPhoto').innerText='📸 Photo Lo';
   document.getElementById('tCheck').innerText='🔬 Check Plant';
-  document.getElementById('tFoot').innerText='© Owner: Kalpana Maravi and Rohit';
+  document.getElementById('tDiag').innerText='🔍 Diagnosis: Fungal Blight 92%';
+  document.getElementById('tLockNote').innerText='Pura ilaj niche lock hai';
+  document.getElementById('tLockTitle').innerText='🔒 Pura Ilaaj Lock Hai';
+  document.getElementById('tShop').innerText='🛒 Amazon Se Kharido - Support Karo';
+  document.getElementById('tUpiNote').innerText='UPI: 6264389870-2@ybl | Screenshot 6264389870 pe bhejo';
  } else {
-  document.getElementById('tSub').innerText='Send Photo, Get Cure';
+  document.getElementById('tSub').innerText='🇮🇳 India + 🇺🇸 USA - Send Photo, Get Cure';
   document.getElementById('tPhoto').innerText='📸 Take Photo';
   document.getElementById('tCheck').innerText='🔬 Check Plant';
-  document.getElementById('tFoot').innerText='© Owner: Kalpana Maravi and Rohit';
+  document.getElementById('tDiag').innerText='🔍 Diagnosis: Fungal Blight 92%';
+  document.getElementById('tLockNote').innerText='Full treatment locked below';
+  document.getElementById('tLockTitle').innerText='🔒 Full Treatment Locked';
+  document.getElementById('tShop').innerText='🛒 Buy from Amazon - Support Us';
+  document.getElementById('tUpiNote').innerText='UPI: 6264389870-2@ybl | Send Screenshot to 6264389870';
  }
 }
-document.getElementById('file').addEventListener('change',e=>{
- document.getElementById('fname').innerText=e.target.files[0].name;
-});
+if(localStorage.getItem('isOwner')==='true'){document.getElementById('result').style.display='block';}
 </script>
 </body>
 </html>
+
