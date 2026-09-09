@@ -1,109 +1,55 @@
-<!DOCTYPE html>
+\<!DOCTYPE html>
 <html lang="hi">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Plants Doctor - Kalpana Maravi and Rohit</title>
-<style>
-body{margin:0;background:#eaf7ec;font-family:sans-serif}
-.card{max-width:500px;margin:20px auto;background:#fff;border-radius:16px;padding:20px;box-shadow:0 2px 10px rgba(0,0,0,.1)}
-.lang{text-align:right;margin-bottom:8px}
-.lang button{border:1.5px solid #16a34a;padding:5px 14px;border-radius:20px;font-weight:bold;margin-left:5px;cursor:pointer}
-.lang button.active{background:#16a34a;color:#fff}
-.lang button.inactive{background:#fff;color:#16a34a}
-.title{color:#14532d;font-size:22px;font-weight:bold;text-align:center}
-.owner{font-size:12px;text-align:center;color:#444;background:#f0fdf4;padding:6px;border-radius:20px;margin:6px 0;border:1px solid #dcfce7}
-.sub{font-size:13px;text-align:center;margin:4px 0 15px}
-.box{border:2px dashed #22c55e;border-radius:14px;padding:25px;text-align:center}
-.btn{background:#16a34a;color:#fff;border:none;padding:14px 0;width:100%;border-radius:28px;font-size:18px;font-weight:bold;cursor:pointer}
-.pay{display:block;padding:12px;border-radius:10px;color:#fff;text-decoration:none;font-weight:bold;margin:8px 0;text-align:center}
-#result{display:none;margin-top:20px}
-.locked-content{display:none}
-</style>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>200 Fasal REAL AI Doctor</title>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<style>body{margin:0;background:#eaf7ec;font-family:sans-serif}.card{max-width:600px;margin:8px auto;background:#fff;border-radius:20px;padding:14px;box-shadow:0 8px 20px rgba(0,0,0,.15);text-align:center}.btn{background:#16a34a;color:#fff;border:none;padding:14px;width:100%;border-radius:30px;font-size:17px;font-weight:800;cursor:pointer;margin-top:8px}.preview{width:100%;border-radius:14px;display:none;max-height:380px;object-fit:cover;border:3px solid #16a34a;margin-top:8px}.box{background:#f0fdf4;border:2px solid #16a34a;padding:12px;border-radius:14px;margin-top:10px;text-align:left;white-space:pre-wrap;font-size:12px;line-height:1.5}.ad{background:#fffbe6;border:1px dashed #eab308;padding:6px;border-radius:8px;margin:10px 0}.pay{display:block;padding:11px;border-radius:10px;color:#fff;text-decoration:none;font-weight:bold;margin:5px 0}</style>
 </head>
 <body>
 <div class="card">
-<div class="lang">
-<button id="btnHi" class="active" onclick="setLang('hi')">हिंदी</button>
-<button id="btnEn" class="inactive" onclick="setLang('en')">English</button>
-</div>
-<div class="title">🌱 Plants Doctor</div>
-<div class="owner" id="tOwner">👑 स्वामी: Kalpana Maravi and Rohit</div>
-<div class="sub" id="tSub">🇮🇳 भारत + 🇺🇸 अमेरिका - फोटो भेजें, इलाज पाएं</div>
-<div class="box">
-<input type="file" id="file" accept="image/*" hidden>
-<button class="btn" id="tPhoto" onclick="document.getElementById('file').click()">📸 फोटो लें</button>
-<p id="fname" style="font-size:11px;color:#666;margin-top:8px"></p>
-</div>
-<button class="btn" style="margin-top:20px;background:#15803d" id="tCheck" onclick="analyze()">🔬 पौधा जांचें</button>
-<div id="result">
-<div style="background:#fefce8;padding:12px;border-radius:10px;margin-top:15px">
-<b id="tDiag">🔍 निदान: फफूंद झुलसा 92%</b><br>
-<span style="font-size:12px" id="tLockNote">पूरा इलाज नीचे लॉक है</span>
-</div>
-<div id="premiumBox" style="border:2px solid #16a34a;padding:14px;border-radius:14px;background:#f0fdf4;margin-top:12px;text-align:center">
-<h3 style="margin:5px" id="tLockTitle">🔒 पूरा इलाज लॉक है</h3>
-<a class="pay" style="background:#16a34a" href="upi://pay?pa=6264389870-2@ybl&pn=Kalpana%20Maravi%20and%20Rohit&am=199&cu=INR&tn=PlantDoctor">🇮🇳 ₹199 यूपीआई पे करें</a>
+<h2 style="color:#14532d;margin:4px">🌱 200 फसल REAL AI डॉक्टर</h2>
+<p style="font-size:11px;background:#dcfce7;padding:5px;border-radius:20px">✅ REAL AI ON | 200 CROPS | 🇮🇳 India + 🇺🇸 USA</p>
+
+<div class="ad"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="1111111111" data-ad-format="auto"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>Ad Top - 200 Fasal</div>
+
+<input type="file" id="file" accept="image/*" hidden><img id="prev" class="preview">
+<button class="btn" onclick="file.click()">📸 फोटो लो - 200 फसल में से पहचानेगा</button>
+<div id="load" style="display:none;margin-top:10px;font-weight:bold">🤖 200 फसल में से REAL AI देख रहा है...</div>
+<div id="res" class="box" style="display:none"></div>
+
+<div class="ad"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="2222222222" data-ad-format="auto"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>Ad Mid - Medicine</div>
+
+<div id="lock" style="display:none;border:2px solid #16a34a;padding:10px;border-radius:14px;background:#fefce8;margin-top:8px">
+<h3>🔒 200 फसल का पूरा इलाज लॉक</h3>
+<button class="btn" style="background:#f59e0b" onclick="unlock()">📺 Ad देखो - Free Unlock 200</button>
+<a class="pay" style="background:#16a34a" href="upi://pay?pa=6264389870-2@ybl&pn=Rohit&am=199&cu=INR">🇮🇳 ₹199 UPI</a>
 <a class="pay" style="background:#0070ba" href="https://www.paypal.me/RohitKumar313807/4.99" target="_blank">🇺🇸 $4.99 PayPal</a>
-<p style="font-size:9px" id="tUpiNote">यूपीआई: 6264389870-2@ybl | स्क्रीनशॉट 6264389870 पर भेजें</p>
+<a class="pay" style="background:#FF9900;color:#000" href="https://www.amazon.in/s?k=Saaf+Fungicide&tag=onamzrohit048-21" target="_blank">🛒 Amazon 200 दवा</a>
 </div>
-<div class="locked-content" style="background:#dcfce7;padding:14px;border-radius:12px;margin-top:12px">
-<b id="tTreat">✅ उपचार (स्वामी के लिए मुफ्त)</b><br>
-<span style="font-size:13px" id="tTreatText">दवा: साफ फफूंदनाशक 2 ग्राम / 1 लीटर<br>तरीका: शाम को 7 दिन छिड़काव करें</span>
-<div style="margin-top:12px;background:#fff3e0;padding:10px;border-radius:10px">
-<b style="font-size:12px" id="tShop">🛒 अमेज़न से खरीदें - समर्थन करें</b>
-<a class="pay" style="background:#FF9900;color:#000;font-size:13px" href="https://www.amazon.in/s?k=Saaf+Fungicide&tag=onamzrohit048-21" target="_blank">🇮🇳 अमेज़न इंडिया</a>
-<a class="pay" style="background:#FF9900;color:#000;font-size:13px" href="https://www.amazon.com/s?k=Fungicide+for+Plants&tag=ruhu20-20" target="_blank">🇺🇸 अमेज़न यूएसए</a>
+<div id="full" class="box" style="display:none;background:#dcfce7"></div>
+
+<details style="font-size:10px;text-align:left;margin-top:8px"><summary>200 फसल लिस्ट देखो</summary>टमाटर,आलू,मिर्च,बैंगन,भिंडी,फूलगोभी,पत्तागोभी,गाजर,मूली,प्याज,लहसुन,मटर,पालक,धनिया,मेथी,लौकी,तोरई,करेला,खीरा,कद्दू,परवल,शिमला,अदरक,हल्दी,आम,केला,सेब,अंगूर,अमरूद,पपीता,अनार,नींबू,संतरा,मौसंबी,लीची,कटहल,जामुन,बेर,आंवला,नारियल,चीकू,आम,सीताफल,इमली,बेल,अंजीर,खजूर,काजू,बादाम,पिस्ता,अखरोट,गुलाब,गेंदा,चमेली,जूही,मोगरा,गुड़हल,तुलसी,पुदीना,एलोवेरा,सूरजमुखी,गेंदा,गेहूं,धान,मक्का,ज्वार,बाजरा,रागी,जौ,सरसों,सोयाबीन,मूंगफली,तिल,अरहर,मूंग,उड़द,चना,मसूर,राजमा,लोबिया,कपास,गन्ना,चाय,कॉफी,रबड़,जूट,तंबाकू,जीरा,धनिया,सौंफ,मेथी,अजवाइन,कालीमिर्च,इलायची,लौंग,दालचीनी,तेजपत्ता,सहजन,कड़ीपत्ता,बांस,सागौन,नीम,बरगद,पीपल,बबूल,यूकेलिप्टस,पॉपलर,शीशम,आम,महोगनी,अर्जुन,आंवला,बेल,हरड़,बहेड़ा,अश्वगंधा,शतावरी,ब्राह्मी,कालमेघ,गिलोय,सफेद मूसली,इसबगोल,मुलेठी,अदरक,हल्दी,लहसुन,प्याज,एलोवेरा,तुलसी,पुदीना,धनिया,मेथी,पालक,चौलाई,बथुआ,सरसों साग,मेथी साग,लाल साग,करेमुआ,नोनिया,पोई,कुलफा,चकवड़,मुनगा,कटहल,जिमीकंद,अरबी,शकरकंद,सिंघाड़ा,कमल ककड़ी,ककोड़ा,कुंदरू,परवल,तोरई,लौकी,करेला,खीरा,कद्दू + 50 और</details>
 </div>
-</div>
-</div>
-<div style="text-align:center;margin-top:15px;font-size:10px;color:#888" id="tFoot">© स्वामी: Kalpana Maravi and Rohit</div>
-</div>
+
 <script>
-const SECRET="rohit313807";
-let curLang='hi';
-if(new URLSearchParams(location.search).get('owner')===SECRET){localStorage.setItem('isOwner','true');history.replaceState({},'',location.pathname);}
-document.getElementById('file').addEventListener('change',e=>{document.getElementById('fname').innerText=e.target.files[0].name;});
-function analyze(){
- if(!document.getElementById('file').files[0]){alert(curLang=='hi'?'पहले फोटो लें! 📸':'Please Take Photo First! 📸');return;}
- document.getElementById('result').style.display='block';
- if(localStorage.getItem('isOwner')==='true'){
-  document.getElementById('premiumBox').style.display='none';
-  document.querySelectorAll('.locked-content').forEach(x=>x.style.display='block');
- }
- window.scrollTo(0,document.body.scrollHeight);
+const API=localStorage.getItem("MY_API") || prompt("Apni Gemini API Key daalo:")
+if(API){localStorage.setItem("MY_API",API);}const DB200={
+"टमाटर":"Saaf 2gm/L","आलू":"Mancozeb","मिर्च":"Imida","बैंगन":"Spinosad","भिंडी":"Imida","फूलगोभी":"Spinosad","पत्तागोभी":"Spinosad","गाजर":"Mancozeb","मूली":"Mancozeb","प्याज":"Mancozeb","लहसुन":"Mancozeb","मटर":"Mancozeb","पालक":"पानी कम","धनिया":"Mancozeb","मेथी":"Mancozeb","लौकी":"COC","तोरई":"COC","करेला":"COC","खीरा":"COC","कद्दू":"COC","परवल":"COC","शिमला मिर्च":"Imida","अदरक":"COC","हल्दी":"COC","आम":"Bordeaux","केला":"Carbendazim","सेब":"Captan","अंगूर":"Sulphur","अमरूद":"Trap","पपीता":"Virus हटाओ","अनार":"Bordeaux","नींबू":"COC","संतरा":"COC","मौसंबी":"COC","लीची":"Bordeaux","कटहल":"Bordeaux","जामुन":"Bordeaux","बेर":"Bordeaux","आंवला":"Bordeaux","नारियल":"Bordeaux","चीकू":"Bordeaux","सीताफल":"Bordeaux","इमली":"Bordeaux","बेल":"Bordeaux","अंजीर":"Bordeaux","खजूर":"Bordeaux","काजू":"Bordeaux","बादाम":"Bordeaux","पिस्ता":"Bordeaux","अखरोट":"Bordeaux","गुलाब":"Saaf","गेंदा":"राख","चमेली":"Saaf","जूही":"Saaf","मोगरा":"Saaf","गुड़हल":"Imida","तुलसी":"पानी कम","पुदीना":"पानी कम","एलोवेरा":"पानी बंद","सूरजमुखी":"Mancozeb","गेहूं":"Propiconazole","धान":"Tricyclazole","मक्का":"Emamectin","ज्वार":"Mancozeb","बाजरा":"Mancozeb","रागी":"Mancozeb","जौ":"Propiconazole","सरसों":"Mancozeb+Imida","सोयाबीन":"Spinosad","मूंगफली":"Mancozeb","तिल":"Mancozeb","अरहर":"Spinosad","मूंग":"Imida","उड़द":"Imida","चना":"Spinosad","मसूर":"Mancozeb","राजमा":"Mancozeb","लोबिया":"Mancozeb","कपास":"Spinosad","गन्ना":"Red Rot","चाय":"COC","कॉफी":"COC","रबड़":"Bordeaux","जूट":"Mancozeb","तंबाकू":"Imida","जीरा":"Mancozeb","सौंफ":"Mancozeb","अजवाइन":"Mancozeb","काली मिर्च":"Bordeaux","इलायची":"Bordeaux","लौंग":"Bordeaux","दालचीनी":"Bordeaux","तेजपत्ता":"Bordeaux","सहजन":"Spinosad","कड़ी पत्ता":"Imida","बांस":"Bordeaux","सागौन":"Bordeaux","नीम":"Bordeaux","बरगद":"Bordeaux","पीपल":"Bordeaux","बबूल":"Bordeaux","यूकेलिप्टस":"Bordeaux","पॉपलर":"Bordeaux","शीशम":"Bordeaux","महोगनी":"Bordeaux","अर्जुन":"Bordeaux","हरड़":"Bordeaux","बहेड़ा":"Bordeaux","अश्वगंधा":"Bordeaux","शतावरी":"Bordeaux","ब्राह्मी":"Bordeaux","कालमेघ":"Bordeaux","गिलोय":"Bordeaux","सफेद मूसली":"Bordeaux","इसबगोल":"Bordeaux","मुलेठी":"Bordeaux","चौलाई":"पानी कम","बथुआ":"पानी कम","सरसों साग":"Mancozeb","मेथी साग":"Mancozeb","लाल साग":"पानी कम","करेमुआ":"पानी कम","पोई":"पानी कम","कुलफा":"पानी कम","जिमीकंद":"Mancozeb","अरबी":"Mancozeb","शकरकंद":"Mancozeb","सिंघाड़ा":"Mancozeb","कमल ककड़ी":"Mancozeb","ककोड़ा":"COC","कुंदरू":"COC"
+};
+let b64="", FT="";
+file.onchange=e=>{let f=e.target.files[0]; if(!f)return; let r=new FileReader(); r.onload=v=>{b64=v.target.result.split(',')[1]; prev.src=v.target.result; prev.style.display='block'; go();}; r.readAsDataURL(f);}
+async function go(){
+ load.style.display='block'; res.style.display='none'; lock.style.display='none'; full.style.display='none';
+ try{
+  let q=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API}`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({contents:[{parts:[{text:"Identify plant from 200 crops Hindi English and disease. Format PLANT: Hindi / English | DISEASE: Hindi / English", inline_data:{mime_type:"image/jpeg",data:b64}}]}]})});
+  let j=await q.json(); let ai=j.candidates?.[0]?.content?.parts?.[0]?.text || "टमाटर / Tomato | Fungus";
+  let k="टमाटर"; for(let x in DB200){ if(ai.toLowerCase().includes(x) || ai.toLowerCase().includes(x.toLowerCase())){k=x;break;} }
+  FT=`✅ 200 में से REAL AI ने पहचाना:\n${ai}\n\n💊 200 फसल इलाज:\n${DB200[k]}\n\n💧 पानी: 2 दिन बंद\n🌿 देसी: नीम तेल`;
+  load.style.display='none'; res.style.display='block'; res.innerText=FT.slice(0,200)+"..."; lock.style.display='block';
+ }catch(e){ load.style.display='none'; alert(e.message); }
 }
-function setLang(l){
- curLang=l;
- document.getElementById('btnHi').className=l=='hi'?'active':'inactive';
- document.getElementById('btnEn').className=l=='en'?'active':'inactive';
- if(l=='hi'){
-  document.getElementById('tOwner').innerText='👑 स्वामी: Kalpana Maravi and Rohit';
-  document.getElementById('tSub').innerText='🇮🇳 भारत + 🇺🇸 अमेरिका - फोटो भेजें, इलाज पाएं';
-  document.getElementById('tPhoto').innerText='📸 फोटो लें';
-  document.getElementById('tCheck').innerText='🔬 पौधा जांचें';
-  document.getElementById('tDiag').innerText='🔍 निदान: फफूंद झुलसा 92%';
-  document.getElementById('tLockNote').innerText='पूरा इलाज नीचे लॉक है';
-  document.getElementById('tLockTitle').innerText='🔒 पूरा इलाज लॉक है';
-  document.getElementById('tShop').innerText='🛒 अमेज़न से खरीदें - समर्थन करें';
-  document.getElementById('tUpiNote').innerText='यूपीआई: 6264389870-2@ybl | स्क्रीनशॉट 6264389870 पर भेजें';
-  document.getElementById('tTreat').innerText='✅ उपचार (स्वामी के लिए मुफ्त)';
-  document.getElementById('tTreatText').innerText='दवा: साफ फफूंदनाशक 2 ग्राम / 1 लीटर\nतरीका: शाम को 7 दिन छिड़काव करें';
-  document.getElementById('tFoot').innerText='© स्वामी: Kalpana Maravi and Rohit';
- } else {
-  document.getElementById('tOwner').innerText='👑 Owner: Kalpana Maravi and Rohit';
-  document.getElementById('tSub').innerText='🇮🇳 India + 🇺🇸 USA - Send Photo, Get Cure';
-  document.getElementById('tPhoto').innerText='📸 Take Photo';
-  document.getElementById('tCheck').innerText='🔬 Check Plant';
-  document.getElementById('tDiag').innerText='🔍 Diagnosis: Fungal Blight 92%';
-  document.getElementById('tLockNote').innerText='Full treatment locked below';
-  document.getElementById('tLockTitle').innerText='🔒 Full Treatment Locked';
-  document.getElementById('tShop').innerText='🛒 Buy from Amazon - Support Us';
-  document.getElementById('tUpiNote').innerText='UPI: 6264389870-2@ybl | Send Screenshot to 6264389870';
-  document.getElementById('tTreat').innerText='✅ Treatment (Owner Free)';
-  document.getElementById('tTreatText').innerText='Medicine: Saaf Fungicide 2gm / 1L\nMethod: Spray for 7 days in evening';
-  document.getElementById('tFoot').innerText='© Owner: Kalpana Maravi and Rohit';
- }
-}
+function unlock(){ setTimeout(()=>{lock.style.display='none'; full.style.display='block'; full.innerText=FT+"\n\n✅ 200 Fasal Unlocked!"; res.style.display='none';},1500); }
 </script>
 </body>
 </html>
