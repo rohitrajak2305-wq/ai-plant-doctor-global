@@ -7,7 +7,7 @@
 body{margin:0;background:#eaf7ec;font-family:sans-serif}
 .card{max-width:500px;margin:20px auto;background:#fff;border-radius:16px;padding:20px;box-shadow:0 2px 10px rgba(0,0,0,.1)}
 .lang{text-align:right;margin-bottom:8px}
-.lang button{border:1.5px solid #16a34a;padding:5px 12px;border-radius:20px;font-weight:bold;margin-left:5px;cursor:pointer}
+.lang button{border:1.5px solid #16a34a;padding:5px 14px;border-radius:20px;font-weight:bold;margin-left:5px;cursor:pointer}
 .lang button.active{background:#16a34a;color:#fff}
 .lang button.inactive{background:#fff;color:#16a34a}
 .title{color:#14532d;font-size:22px;font-weight:bold;text-align:center}
@@ -22,59 +22,49 @@ body{margin:0;background:#eaf7ec;font-family:sans-serif}
 </head>
 <body>
 <div class="card">
-
 <div class="lang">
 <button id="btnHi" class="active" onclick="setLang('hi')">हिंदी</button>
 <button id="btnEn" class="inactive" onclick="setLang('en')">English</button>
 </div>
-
 <div class="title">🌱 Plants Doctor</div>
-<div class="owner">👑 Owner: Kalpana Maravi and Rohit</div>
-<div class="sub" id="tSub">🇮🇳 India + 🇺🇸 USA - Photo bhejo, ilaj pao</div>
-
+<div class="owner" id="tOwner">👑 स्वामी: Kalpana Maravi and Rohit</div>
+<div class="sub" id="tSub">🇮🇳 भारत + 🇺🇸 अमेरिका - फोटो भेजें, इलाज पाएं</div>
 <div class="box">
 <input type="file" id="file" accept="image/*" hidden>
-<button class="btn" id="tPhoto" onclick="document.getElementById('file').click()">📸 Photo Lo</button>
+<button class="btn" id="tPhoto" onclick="document.getElementById('file').click()">📸 फोटो लें</button>
 <p id="fname" style="font-size:11px;color:#666;margin-top:8px"></p>
 </div>
-
-<button class="btn" style="margin-top:20px;background:#15803d" id="tCheck" onclick="analyze()">🔬 Check Plant</button>
-
+<button class="btn" style="margin-top:20px;background:#15803d" id="tCheck" onclick="analyze()">🔬 पौधा जांचें</button>
 <div id="result">
 <div style="background:#fefce8;padding:12px;border-radius:10px;margin-top:15px">
-<b id="tDiag">🔍 Diagnosis: Fungal Blight 92%</b><br>
-<span style="font-size:12px" id="tLockNote">Pura ilaj niche lock hai</span>
+<b id="tDiag">🔍 निदान: फफूंद झुलसा 92%</b><br>
+<span style="font-size:12px" id="tLockNote">पूरा इलाज नीचे लॉक है</span>
 </div>
-
 <div id="premiumBox" style="border:2px solid #16a34a;padding:14px;border-radius:14px;background:#f0fdf4;margin-top:12px;text-align:center">
-<h3 style="margin:5px" id="tLockTitle">🔒 Pura Ilaaj Lock Hai</h3>
-<a class="pay" style="background:#16a34a" href="upi://pay?pa=6264389870-2@ybl&pn=Kalpana%20Maravi%20and%20Rohit&am=199&cu=INR&tn=PlantDoctor">🇮🇳 ₹199 UPI Pay</a>
-<a class="pay" style="background:#0070ba" href="https://www.paypal.me/RohitKumar313807/4.99" target="_blank">🇺🇸 $4.99 PayPal Pay</a>
-<p style="font-size:9px" id="tUpiNote">UPI: 6264389870-2@ybl | Screenshot 6264389870 pe bhejo</p>
+<h3 style="margin:5px" id="tLockTitle">🔒 पूरा इलाज लॉक है</h3>
+<a class="pay" style="background:#16a34a" href="upi://pay?pa=6264389870-2@ybl&pn=Kalpana%20Maravi%20and%20Rohit&am=199&cu=INR&tn=PlantDoctor">🇮🇳 ₹199 यूपीआई पे करें</a>
+<a class="pay" style="background:#0070ba" href="https://www.paypal.me/RohitKumar313807/4.99" target="_blank">🇺🇸 $4.99 PayPal</a>
+<p style="font-size:9px" id="tUpiNote">यूपीआई: 6264389870-2@ybl | स्क्रीनशॉट 6264389870 पर भेजें</p>
 </div>
-
 <div class="locked-content" style="background:#dcfce7;padding:14px;border-radius:12px;margin-top:12px">
-<b id="tTreat">✅ Treatment (Owner Free)</b><br>
-<span style="font-size:13px" id="tTreatText">Dawa: Saaf Fungicide 2gm / 1L<br>Tarika: Shaam ko 7 din spray</span>
+<b id="tTreat">✅ उपचार (स्वामी के लिए मुफ्त)</b><br>
+<span style="font-size:13px" id="tTreatText">दवा: साफ फफूंदनाशक 2 ग्राम / 1 लीटर<br>तरीका: शाम को 7 दिन छिड़काव करें</span>
 <div style="margin-top:12px;background:#fff3e0;padding:10px;border-radius:10px">
-<b style="font-size:12px" id="tShop">🛒 Amazon Se Kharido - Support Karo</b>
-<a class="pay" style="background:#FF9900;color:#000;font-size:13px" href="https://www.amazon.in/s?k=Saaf+Fungicide&tag=onamzrohit048-21" target="_blank">🇮🇳 Amazon.in</a>
-<a class="pay" style="background:#FF9900;color:#000;font-size:13px" href="https://www.amazon.com/s?k=Fungicide+for+Plants&tag=ruhu20-20" target="_blank">🇺🇸 Amazon.com</a>
+<b style="font-size:12px" id="tShop">🛒 अमेज़न से खरीदें - समर्थन करें</b>
+<a class="pay" style="background:#FF9900;color:#000;font-size:13px" href="https://www.amazon.in/s?k=Saaf+Fungicide&tag=onamzrohit048-21" target="_blank">🇮🇳 अमेज़न इंडिया</a>
+<a class="pay" style="background:#FF9900;color:#000;font-size:13px" href="https://www.amazon.com/s?k=Fungicide+for+Plants&tag=ruhu20-20" target="_blank">🇺🇸 अमेज़न यूएसए</a>
 </div>
 </div>
 </div>
-<div style="text-align:center;margin-top:15px;font-size:10px;color:#888" id="tFoot">© Owner: Kalpana Maravi and Rohit</div>
+<div style="text-align:center;margin-top:15px;font-size:10px;color:#888" id="tFoot">© स्वामी: Kalpana Maravi and Rohit</div>
 </div>
-
 <script>
 const SECRET="rohit313807";
 let curLang='hi';
 if(new URLSearchParams(location.search).get('owner')===SECRET){localStorage.setItem('isOwner','true');history.replaceState({},'',location.pathname);}
-
 document.getElementById('file').addEventListener('change',e=>{document.getElementById('fname').innerText=e.target.files[0].name;});
-
 function analyze(){
- if(!document.getElementById('file').files[0]){alert(curLang=='hi'?'Pehle Photo Lo!':'Please Take Photo First!');return;}
+ if(!document.getElementById('file').files[0]){alert(curLang=='hi'?'पहले फोटो लें! 📸':'Please Take Photo First! 📸');return;}
  document.getElementById('result').style.display='block';
  if(localStorage.getItem('isOwner')==='true'){
   document.getElementById('premiumBox').style.display='none';
@@ -82,21 +72,25 @@ function analyze(){
  }
  window.scrollTo(0,document.body.scrollHeight);
 }
-
 function setLang(l){
  curLang=l;
  document.getElementById('btnHi').className=l=='hi'?'active':'inactive';
  document.getElementById('btnEn').className=l=='en'?'active':'inactive';
  if(l=='hi'){
-  document.getElementById('tSub').innerText='🇮🇳 India + 🇺🇸 USA - Photo bhejo, ilaj pao';
-  document.getElementById('tPhoto').innerText='📸 Photo Lo';
-  document.getElementById('tCheck').innerText='🔬 Check Plant';
-  document.getElementById('tDiag').innerText='🔍 Diagnosis: Fungal Blight 92%';
-  document.getElementById('tLockNote').innerText='Pura ilaj niche lock hai';
-  document.getElementById('tLockTitle').innerText='🔒 Pura Ilaaj Lock Hai';
-  document.getElementById('tShop').innerText='🛒 Amazon Se Kharido - Support Karo';
-  document.getElementById('tUpiNote').innerText='UPI: 6264389870-2@ybl | Screenshot 6264389870 pe bhejo';
+  document.getElementById('tOwner').innerText='👑 स्वामी: Kalpana Maravi and Rohit';
+  document.getElementById('tSub').innerText='🇮🇳 भारत + 🇺🇸 अमेरिका - फोटो भेजें, इलाज पाएं';
+  document.getElementById('tPhoto').innerText='📸 फोटो लें';
+  document.getElementById('tCheck').innerText='🔬 पौधा जांचें';
+  document.getElementById('tDiag').innerText='🔍 निदान: फफूंद झुलसा 92%';
+  document.getElementById('tLockNote').innerText='पूरा इलाज नीचे लॉक है';
+  document.getElementById('tLockTitle').innerText='🔒 पूरा इलाज लॉक है';
+  document.getElementById('tShop').innerText='🛒 अमेज़न से खरीदें - समर्थन करें';
+  document.getElementById('tUpiNote').innerText='यूपीआई: 6264389870-2@ybl | स्क्रीनशॉट 6264389870 पर भेजें';
+  document.getElementById('tTreat').innerText='✅ उपचार (स्वामी के लिए मुफ्त)';
+  document.getElementById('tTreatText').innerText='दवा: साफ फफूंदनाशक 2 ग्राम / 1 लीटर\nतरीका: शाम को 7 दिन छिड़काव करें';
+  document.getElementById('tFoot').innerText='© स्वामी: Kalpana Maravi and Rohit';
  } else {
+  document.getElementById('tOwner').innerText='👑 Owner: Kalpana Maravi and Rohit';
   document.getElementById('tSub').innerText='🇮🇳 India + 🇺🇸 USA - Send Photo, Get Cure';
   document.getElementById('tPhoto').innerText='📸 Take Photo';
   document.getElementById('tCheck').innerText='🔬 Check Plant';
@@ -105,9 +99,11 @@ function setLang(l){
   document.getElementById('tLockTitle').innerText='🔒 Full Treatment Locked';
   document.getElementById('tShop').innerText='🛒 Buy from Amazon - Support Us';
   document.getElementById('tUpiNote').innerText='UPI: 6264389870-2@ybl | Send Screenshot to 6264389870';
+  document.getElementById('tTreat').innerText='✅ Treatment (Owner Free)';
+  document.getElementById('tTreatText').innerText='Medicine: Saaf Fungicide 2gm / 1L\nMethod: Spray for 7 days in evening';
+  document.getElementById('tFoot').innerText='© Owner: Kalpana Maravi and Rohit';
  }
 }
-if(localStorage.getItem('isOwner')==='true'){document.getElementById('result').style.display='block';}
 </script>
 </body>
 </html>
