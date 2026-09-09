@@ -70,3 +70,74 @@ if(localStorage.getItem('isOwner')==='true'){document.getElementById('result').s
 </script>
 </body>
 </html>
+<!-- 1. Button -->
+<div style="text-align:right">
+<button id="btnHi" onclick="setLang('hi')" style="background:#16a34a;color:#fff;padding:5px 12px;border-radius:15px;border:1px solid #16a34a">हिंदी</button>
+<button id="btnEn" onclick="setLang('en')" style="background:#fff;color:#16a34a;padding:5px 12px;border-radius:15px;border:1px solid #16a34a">English</button>
+</div>
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plants Doctor - Kalpana Maravi and Rohit</title>
+<style>
+body{margin:0;background:#eaf7ec;font-family:sans-serif}
+.card{max-width:500px;margin:20px auto;background:#fff;border-radius:16px;padding:20px;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+.lang{text-align:right;margin-bottom:8px}
+.lang button{border:1px solid #16a34a;padding:5px 12px;border-radius:20px;font-weight:bold;margin-left:5px;cursor:pointer}
+.lang button.active{background:#16a34a;color:#fff}
+.lang button.inactive{background:#fff;color:#16a34a}
+.title{color:#14532d;font-size:22px;font-weight:bold;text-align:center}
+.owner{font-size:12px;text-align:center;color:#666;background:#f0fdf4;padding:6px;border-radius:20px;margin-bottom:12px}
+.sub{font-size:13px;text-align:center;margin:4px 0 15px}
+.box{border:2px dashed #22c55e;border-radius:14px;padding:25px;text-align:center}
+.btn{background:#16a34a;color:#fff;border:none;padding:14px 0;width:100%;border-radius:28px;font-size:18px;font-weight:bold;cursor:pointer}
+</style>
+</head>
+<body>
+<div class="card">
+
+<div class="lang">
+<button id="btnHi" class="active" onclick="setLang('hi')">हिंदी</button>
+<button id="btnEn" class="inactive" onclick="setLang('en')">English</button>
+</div>
+
+<div class="title">🌱 Plants Doctor</div>
+<div class="owner">👑 Owner: Kalpana Maravi and Rohit</div>
+<div class="sub" id="tSub">Photo bhejo, ilaj pao</div>
+
+<div class="box">
+<input type="file" id="file" accept="image/*" hidden>
+<button class="btn" id="tPhoto" onclick="document.getElementById('file').click()">📸 Photo Lo</button>
+<p id="fname" style="font-size:11px;color:#666;margin-top:8px"></p>
+</div>
+
+<button class="btn" style="margin-top:20px;background:#15803d" id="tCheck" onclick="alert(curLang=='hi'?'Photo Check Ho Gayi!':'Photo Checked!')">🔬 Check Plant</button>
+
+<div style="text-align:center;margin-top:20px;font-size:10px;color:#888" id="tFoot">© Owner: Kalpana Maravi and Rohit</div>
+</div>
+
+<script>
+let curLang='hi';
+function setLang(l){
+ curLang=l;
+ document.getElementById('btnHi').className = l=='hi'? 'active' : 'inactive';
+ document.getElementById('btnEn').className = l=='en'? 'active' : 'inactive';
+ if(l=='hi'){
+  document.getElementById('tSub').innerText='Photo bhejo, ilaj pao';
+  document.getElementById('tPhoto').innerText='📸 Photo Lo';
+  document.getElementById('tCheck').innerText='🔬 Check Plant';
+  document.getElementById('tFoot').innerText='© Owner: Kalpana Maravi and Rohit';
+ } else {
+  document.getElementById('tSub').innerText='Send Photo, Get Cure';
+  document.getElementById('tPhoto').innerText='📸 Take Photo';
+  document.getElementById('tCheck').innerText='🔬 Check Plant';
+  document.getElementById('tFoot').innerText='© Owner: Kalpana Maravi and Rohit';
+ }
+}
+document.getElementById('file').addEventListener('change',e=>{
+ document.getElementById('fname').innerText=e.target.files[0].name;
+});
+</script>
+</body>
+</html>
