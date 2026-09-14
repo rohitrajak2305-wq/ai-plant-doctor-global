@@ -1,181 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Plant Doctor - REAL</title>
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Plant Doctor - REAL</title>
 <style>
 *{box-sizing:border-box}body{margin:0;font-family:Arial;background:#f2faf5;color:#173b2a}
 header{background:linear-gradient(135deg,#087443,#31b96f);color:#fff;padding:12px 6%;display:flex;justify-content:space-between;position:sticky;top:0;z-index:10;gap:8px}
-.header-right{display:flex;gap:6px}
-select.lang, select.country{padding:8px;border:0;border-radius:8px;font-weight:bold}
-.container{max-width:1050px;margin:auto;padding:20px 15px}
-.card{background:#fff;padding:20px;border-radius:19px;box-shadow:0 6px 25px rgba(0,0,0,.07);margin-bottom:18px}
-input,select{width:100%;padding:12px;border:1px solid #b9d6c3;border-radius:10px;margin:7px 0 14px}
-.btn{border:0;background:#14834f;color:#fff;padding:12px;border-radius:11px;font-weight:bold;cursor:pointer;width:100%}
+.header-right{display:flex;gap:6px}select{padding:8px;border:0;border-radius:8px;font-weight:bold}
+.container{max-width:1050px;margin:auto;padding:20px 15px}.card{background:#fff;padding:20px;border-radius:19px;box-shadow:0 6px 25px rgba(0,0,0,.07);margin-bottom:18px}
+input,select{width:100%;padding:12px;border:1px solid #b9d6c3;border-radius:10px;margin:7px 0 14px}.btn{border:0;background:#14834f;color:#fff;padding:12px;border-radius:11px;font-weight:bold;cursor:pointer;width:100%}
 .result{background:#effaf2;border-left:5px solid #14834f;padding:15px;border-radius:10px;margin-top:15px}
-.price{font-size:34px;font-weight:900}
 #preview{width:100%;max-height:300px;object-fit:contain;display:none;margin:10px 0;border-radius:14px}
-.nav{display:flex;gap:8px;overflow-x:auto;margin-bottom:15px}
-.nav button{border:0;padding:10px 14px;border-radius:12px;background:#dff3e6;font-weight:bold;cursor:pointer;white-space:nowrap}
-.nav button.active{background:#14834f;color:#fff}
-.page{display:none}.page.active{display:block}
-.qr-box{background:#000;color:#fff;padding:20px;border-radius:20px;text-align:center}
-.paypal-box{background:#f0f7ff;border:2px solid #0070ba;padding:20px;border-radius:20px;text-align:center}
-</style>
-</head>
-<body>
-<header>
-<div>🌱 Plant Doctor</div>
-<div class="header-right">
-<select id="lang" class="lang"><option value="hi">हिन्दी 🇮🇳</option><option value="en">English 🇺🇸</option></select>
-<select id="country" class="country"><option value="IN">India</option><option value="US">USA</option></select>
-</div>
-</header>
+.nav{display:flex;gap:8px;overflow-x:auto;margin-bottom:15px}.nav button{border:0;padding:10px 14px;border-radius:12px;background:#dff3e6;font-weight:bold;cursor:pointer;white-space:nowrap}.nav button.active{background:#14834f;color:#fff}
+.page{display:none}.page.active{display:block}.qr-box{background:#000;color:#fff;padding:20px;border-radius:20px;text-align:center}.paypal-box{background:#f0f7ff;border:2px solid #0070ba;padding:20px;border-radius:20px;text-align:center}.qrimg{width:260px;background:#fff;padding:12px;border-radius:15px}
+</style></head><body>
+<header><div>🌱 Plant Doctor - REAL</div><div class="header-right"><select id="lang"><option value="hi">हिन्दी 🇮🇳</option><option value="en">English 🇺🇸</option></select><select id="country"><option value="IN">India IN</option><option value="US">USA US</option></select></div></header>
 <div class="container">
 <div class="nav">
 <button class="active" data-page="check" onclick="showPage('check',this)" data-i18n="navCheck">📷 पौधा जाँच</button>
 <button data-page="premium" onclick="showPage('premium',this)" data-i18n="navPremium">⭐ प्रीमियम</button>
-<button data-page="owner" onclick="showPage('owner',this)" data-i18n="navOwner">👨‍💼 ओनर</button>
+<button data-page="owner" onclick="showPage('owner',this)">👨‍💼 ओनर</button>
 </div>
 
-<section id="check" class="page active">
-<div class="card">
+<section id="check" class="page active"><div class="card">
 <h2 data-i18n="checkTitle">📷 असली AI जाँच</h2>
 <input id="photo" type="file" accept="image/*"><img id="preview">
 <input id="plantName" data-i18n-ph="plantPlaceholder" placeholder="टमाटर, आलू आदि">
-<select id="symptom">
-<option value="" data-i18n="symptomSelect">लक्षण चुनें</option>
-<option value="yellow" data-i18n="yellow">पत्ते पीले</option>
-<option value="brown" data-i18n="brown">भूरे धब्बे</option>
-<option value="white" data-i18n="white">सफेद पाउडर</option>
-<option value="insects" data-i18n="insects">कीड़े</option>
-<option value="wilt" data-i18n="wilt">मुरझाना</option>
-</select>
+<select id="symptom"><option value="" data-i18n="symptomSelect">लक्षण चुनें</option><option value="yellow">पत्ते पीले</option><option value="brown">भूरे धब्बे</option><option value="white">सफेद पाउडर</option><option value="insects">कीड़े</option><option value="wilt">मुरझाना</option></select>
 <button class="btn" id="analyze" data-i18n="analyzeBtn">🔍 असली AI से चेक करो</button>
-<div id="result"></div>
-<p id="premiumStatus" style="font-size:13px; font-weight:bold; margin-top:10px"></p>
-</div>
-</section>
+<div id="result"></div><p id="premiumStatus" style="font-size:13px;font-weight:bold;margin-top:10px"></p>
+</div></section>
 
 <section id="premium" class="page"><div class="card">
-<h2 data-i18n="premiumTitle">⭐ प्रीमियम</h2><div class="price" id="price">₹100 Lifetime</div>
-<p id="priceSub">भारत के लिए</p>
+<h2 data-i18n="premiumTitle">⭐ प्रीमियम</h2><div style="font-size:32px;font-weight:900" id="price">₹100 Lifetime</div><p id="priceSub">भारत के लिए</p>
 
 <div id="indiaPay" class="qr-box">
-<h2 style="color:#9d6eff">PhonePe</h2>
-<p style="color:#9d6eff;font-weight:bold">ACCEPTED HERE</p>
+<h2 style="color:#9d6eff;margin:0">PhonePe</h2><p style="color:#9d6eff;font-weight:bold">ACCEPTED HERE</p>
 <p data-i18n="scanQr">PhonePe App से QR Scan करो</p>
-<img src="phonepe-qr.jpg" style="width:240px; background:#fff; padding:12px; border-radius:15px; margin:10px 0" alt="PhonePe QR">
+<img src="data:image/jpeg;base64,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" class="qrimg">
 <p><b>ROHIT KUMAR</b></p>
 </div>
 
 <div id="usaPay" class="paypal-box" style="display:none">
-<img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_37x23.jpg" style="width:80px" alt="PayPal">
-<h2>PayPal</h2>
-<p data-i18n="usaPayText">USA Users - Click below to pay</p>
-<a href="https://www.paypal.me/RohitKumar313807" target="_blank" style="text-decoration:none">
-<div style="background:#0070ba;color:#fff;padding:15px;border-radius:12px;font-weight:bold;margin:15px 0" data-i18n="paypalBtn">💳 Pay $4.99 via PayPal</div>
-</a>
-<p style="font-size:12px">paypal.me/RohitKumar313807</p>
+<h2>PayPal</h2><p data-i18n="usaPayText">USA Users - Click below to pay</p>
+<a href="https://www.paypal.me/RohitKumar313807" target="_blank"><button class="btn" style="background:#0070ba" data-i18n="paypalBtn">💳 Pay $4.99 via PayPal</button></a>
+<p style="font-size:12px;margin-top:8px">paypal.me/RohitKumar313807</p>
 </div>
 
-<div style="margin-top:20px">
-<input id="utr" data-i18n-ph="utrPlaceholder" placeholder="Transaction ID डालो">
-<button class="btn" id="verifyPay" style="background:#5f259f" data-i18n="paidBtn">✅ मैंने पेमेंट कर दिया</button>
+<br><input id="utr" data-i18n-ph="utrPlaceholder" placeholder="Transaction ID डालो"><br>
+<button class="btn" style="background:#5f259f" id="verifyPay" data-i18n="paidBtn">✅ मैंने पेमेंट कर दिया</button>
 <p id="payMsg"></p>
-</div>
 </div></section>
 
 <section id="owner" class="page"><div class="card">
-<h2 data-i18n="ownerTitle">👨‍💼 ओनर - सिर्फ तुम</h2>
-<input id="ownerPinSet" type="password" placeholder="4 digit PIN set karo" maxlength="4">
-<button class="btn" id="registerOwner" data-i18n="regOwner">🔐 ओनर रजिस्टर (Face ID)</button><br><br>
-<input id="ownerPinLogin" type="password" placeholder="PIN डालो" maxlength="4">
-<button class="btn" id="ownerLogin" data-i18n="ownerLogin">👤 ओनर लॉगिन</button>
-<div id="ownerMessage" style="margin-top:10px"></div><div id="adminPanel"></div>
+<h2>👨‍💼 ओनर</h2><input id="ownerPinSet" type="password" placeholder="4 digit PIN" maxlength="4"><button class="btn" id="registerOwner">🔐 Register Owner</button><br><br><input id="ownerPinLogin" type="password" placeholder="PIN डालो" maxlength="4"><button class="btn" id="ownerLogin">👤 Owner Login</button><div id="ownerMessage" style="margin-top:10px"></div><div id="adminPanel"></div>
 </div></section>
 </div>
-
 <script>
-const translations={
-en:{navCheck:"📷 Plant Check",navPremium:"⭐ Premium",navOwner:"👨‍💼 Owner",checkTitle:"📷 Real AI Check",plantPlaceholder:"Tomato, Potato etc",symptomSelect:"Select symptom",yellow:"Yellow leaves",brown:"Brown spots",white:"White powder",insects:"Insects",wilt:"Wilting",analyzeBtn:"🔍 Check with Real AI",premiumTitle:"⭐ Premium",scanQr:"Scan any QR using PhonePe App",usaPayText:"USA Users - Click below to pay",paypalBtn:"💳 Pay $4.99 via PayPal - Click Here",utrPlaceholder:"Enter Transaction ID",paidBtn:"✅ I Have Paid - Turn ON Premium",ownerTitle:"👨‍💼 Owner - Only You",regOwner:"🔐 Register Owner (Face ID)",ownerLogin:"👤 Owner Login"},
-hi:{navCheck:"📷 पौधा जाँच",navPremium:"⭐ प्रीमियम",navOwner:"👨‍💼 ओनर",checkTitle:"📷 असली AI जाँच",plantPlaceholder:"टमाटर, आलू आदि",symptomSelect:"लक्षण चुनें",yellow:"पत्ते पीले",brown:"भूरे धब्बे",white:"सफेद पाउडर",insects:"कीड़े",wilt:"मुरझाना",analyzeBtn:"🔍 असली AI से चेक करो",premiumTitle:"⭐ प्रीमियम",scanQr:"PhonePe App से QR Scan करो",usaPayText:"USA यूजर्स - नीचे क्लिक करके पे करो",paypalBtn:"💳 PayPal से $4.99 Pay करो - क्लिक करो",utrPlaceholder:"Transaction ID डालो",paidBtn:"✅ मैंने पेमेंट कर दिया - प्रीमियम ON करो",ownerTitle:"👨‍💼 ओनर - सिर्फ तुम",regOwner:"🔐 ओनर रजिस्टर (Face ID)",ownerLogin:"👤 ओनर लॉगिन"}
-};
-const CONFIG={ PREMIUM_KEY:"plantDoctorIsPremium", PIN_KEY:"pdPin" };
-function applyLanguage(lang){
-const t=translations[lang];
-document.querySelectorAll("[data-i18n]").forEach(el=>{const k=el.getAttribute("data-i18n"); if(t[k]) el.textContent=t[k];});
-document.querySelectorAll("[data-i18n-ph]").forEach(el=>{const k=el.getAttribute("data-i18n-ph"); if(t[k]) el.placeholder=t[k];});
-localStorage.setItem("pd_lang",lang); checkPremium();
-}
-document.getElementById('lang').onchange=(e)=>applyLanguage(e.target.value);
-const savedLang=localStorage.getItem("pd_lang")||"hi";
-document.getElementById('lang').value=savedLang; applyLanguage(savedLang);
-
-function showPage(id,btn){
-document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-document.getElementById(id).classList.add('active');
-document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));
-btn.classList.add('active');
-}
-function isPremium(){ return localStorage.getItem(CONFIG.PREMIUM_KEY)==="true"; }
-function checkPremium(){
-const lang=document.getElementById('lang').value;
-document.getElementById('premiumStatus').textContent = isPremium()? (lang==="hi"?"✅ प्रीमियम एक्टिव है":"✅ Premium Active") : (lang==="hi"?"❌ फ्री मोड - प्रीमियम लो":"❌ Free Mode - Get Premium");
-}
-
-document.getElementById('country').onchange=()=>{
-const isUS=document.getElementById('country').value==="US";
-const lang=document.getElementById('lang').value;
-document.getElementById('price').textContent=isUS? "$4.99 Lifetime" : "₹100 Lifetime";
-document.getElementById('priceSub').textContent=isUS? (lang==="hi"?"USA के लिए":"For USA") : (lang==="hi"?"भारत के लिए":"For India");
-document.getElementById('indiaPay').style.display=isUS? "none" : "block";
-document.getElementById('usaPay').style.display=isUS? "block" : "none";
-document.getElementById('verifyPay').style.background=isUS? "#0070ba" : "#5f259f";
-};
-
-let curUrl=null;
-document.getElementById('photo').onchange=(e)=>{
-const f=e.target.files[0]; if(!f) return;
-if(curUrl) URL.revokeObjectURL(curUrl);
-curUrl=URL.createObjectURL(f);
-const img=document.getElementById('preview'); img.src=curUrl; img.style.display='block';
-};
-async function realAI(file){
-try{
-const res=await fetch("https://api-inference.huggingface.co/models/linkanjarad/mobilenet_v2_1.0_224-plant-disease-identification", {method:"POST", body: file});
-const data=await res.json();
-if(Array.isArray(data) && data.length>0) return `✅ REAL AI: ${data[0].label} - ${(data[0].score*100).toFixed(1)}%`;
-return "Clear result nahi mila";
-}catch(err){ return "AI busy hai, 1 min baad try karo"; }
-}
-document.getElementById('analyze').onclick=async()=>{
-if(!isPremium()){ alert(document.getElementById('lang').value==="hi"?"पहले प्रीमियम लो! ₹100":"Get Premium first! $4.99"); showPage('premium',document.querySelector('[data-page=premium]')); return; }
-if(!document.getElementById('photo').files[0]) return alert("Photo daalo");
-const btn=document.getElementById('analyze'); const old=btn.textContent; btn.textContent="AI Check ho raha hai..."; btn.disabled=true;
-const aiText=await realAI(document.getElementById('photo').files[0]);
-document.getElementById('result').innerHTML=`<div class="result"><b>${aiText}</b></div>`;
-btn.textContent=old; btn.disabled=false;
-};
-document.getElementById('verifyPay').onclick=()=>{
-const utr=document.getElementById('utr').value.trim();
-if(utr.length < 2){ alert("Transaction ID daalo"); return; }
-localStorage.setItem(CONFIG.PREMIUM_KEY,"true");
-document.getElementById('payMsg').innerHTML="<div class='result'>✅ Premium Active! Ab check karo.</div>";
+const translations={en:{navCheck:"📷 Plant Check",navPremium:"⭐ Premium",checkTitle:"📷 Real AI Check",plantPlaceholder:"Tomato, Potato etc",symptomSelect:"Select symptom",analyzeBtn:"🔍 Check with Real AI",premiumTitle:"⭐ Premium",scanQr:"Scan any QR using PhonePe App",usaPayText:"USA Users - Click below to pay",paypalBtn:"💳 Pay $4.99 via PayPal",utrPlaceholder:"Enter Transaction ID",paidBtn:"✅ I Have Paid"},hi:{navCheck:"📷 पौधा जाँच",navPremium:"⭐ प्रीमियम",checkTitle:"📷 असली AI जाँच",plantPlaceholder:"टमाटर, आलू आदि",symptomSelect:"लक्षण चुनें",analyzeBtn:"🔍 असली AI से चेक करो",premiumTitle:"⭐ प्रीमियम",scanQr:"PhonePe App से QR Scan करो",usaPayText:"USA यूजर्स - नीचे क्लिक करके पे करो",paypalBtn:"💳 PayPal से $4.99 Pay करो",utrPlaceholder:"Transaction ID डालो",paidBtn:"✅ मैंने पेमेंट कर दिया"}};
+function applyLang(l){const t=translations[l];document.querySelectorAll("[data-i18n]").forEach(e=>{const k=e.getAttribute("data-i18n");if(t[k])e.textContent=t[k]});document.querySelectorAll("[data-i18n-ph]").forEach(e=>{const k=e.getAttribute("data-i18n-ph");if(t[k])e.placeholder=t[k]});localStorage.setItem("pd_lang",l);checkPremium()}
+document.getElementById('lang').onchange=e=>applyLang(e.target.value);
+const saved=localStorage.getItem("pd_lang")||"hi";document.getElementById('lang').value=saved;applyLang(saved);
+function showPage(id,btn){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));btn.classList.add('active')}
+function isPremium(){return localStorage.getItem("plantDoctorIsPremium")==="true"}
+function checkPremium(){const lang=document.getElementById('lang').value;document.getElementById('premiumStatus').textContent=isPremium()?(lang==="hi"?"✅ प्रीमियम एक्टिव":"✅ Premium Active"):(lang==="hi"?"❌ फ्री मोड":"❌ Free Mode")}
 checkPremium();
-};
-// Owner simple PIN
-document.getElementById('registerOwner').onclick=()=>{
-const pin=document.getElementById('ownerPinSet').value; if(pin.length!=4){alert("4 digit PIN"); return;}
-localStorage.setItem(CONFIG.PIN_KEY,pin);
-document.getElementById('ownerMessage').innerHTML="<div class='result'>✅ Owner PIN set ho gaya: "+pin+"</div>";
-};
-document.getElementById('ownerLogin').onclick=()=>{
-const pin=document.getElementById('ownerPinLogin').value;
-if(pin===localStorage.getItem(CONFIG.PIN_KEY)){document.getElementById('adminPanel').innerHTML="<div class='result'><b>Owner Dashboard</b><br>Premium users: "+(isPremium()?"1 (You)":"0")+"</div>";}
-else{alert("Galat PIN");}
-};
-</script>
-</body>
-</html>
-
+document.getElementById('country').onchange=function(){const isUS=this.value==="US";const lang=document.getElementById('lang').value;document.getElementById('price').textContent=isUS?"$4.99 Lifetime":"₹100 Lifetime";document.getElementById('priceSub').textContent=isUS?(lang==="hi"?"USA के लिए":"For USA"):(lang==="hi"?"भारत के लिए":"For India");document.getElementById('indiaPay').style.display=isUS?"none":"block";document.getElementById('usaPay').style.display=isUS?"block":"none"};
+let curUrl=null;document.getElementById('photo').onchange=e=>{const f=e.target.files[0];if(!f)return;if(curUrl)URL.revokeObjectURL(curUrl);curUrl=URL.createObjectURL(f);const img=document.getElementById('preview');img.src=curUrl;img.style.display='block'};
+async function realAI(file){try{const res=await fetch("https://api-inference.huggingface.co/models/linkanjarad/mobilenet_v2_1.0_224-plant-disease-identification",{method:"POST",body:file});const data=await res.json();if(Array.isArray(data)&&data.length>0)return "✅ REAL AI: "+data[0].label+" - "+(data[0].score*100).toFixed(1)+"%";return "Clear result nahi mila"}catch{return "AI busy hai"}};
+document.getElementById('analyze').onclick=async()=>{if(!isPremium()){alert("Pehle Premium lo!");showPage('premium',document.querySelector('[data-page=premium]'));return}if(!document.getElementById('photo').files[0])return alert("Photo daalo");const btn=document.getElementById('analyze');btn.disabled=true;const txt=await realAI(document.getElementById('photo').files[0]);document.getElementById('result').innerHTML="<div class='result'><b>"+txt+"</b></div>";btn.disabled=false};
+document.getElementById('verifyPay').onclick=()=>{const utr=document.getElementById('utr').value.trim();if(utr.length<2)return alert("ID daalo");localStorage.setItem("plantDoctorIsPremium","true");document.getElementById('payMsg').innerHTML="<div class='result'>✅ Premium Active!</div>";checkPremium()};
+document.getElementById('registerOwner').onclick=()=>{const pin=document.getElementById('ownerPinSet').value;if(pin.length!=4)return alert("4 digit");localStorage.setItem("pdPin",pin);document.getElementById('ownerMessage').innerHTML="✅ Owner set"};document.getElementById('ownerLogin').onclick=()=>{const pin=document.getElementById('ownerPinLogin').value;if(pin===localStorage.getItem("pdPin"))document.getElementById('adminPanel').innerHTML="<div class='result'><b>Owner Dashboard</b></div>";else alert("Galat PIN")};
+</script></body></html>
