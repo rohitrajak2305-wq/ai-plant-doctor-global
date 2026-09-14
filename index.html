@@ -1,43 +1,58 @@
-<!DOCTYPE html>
-<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Plant Doctor - REAL</title>
-<style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial;background:#f2faf5;color:#173b2a}
-header{background:linear-gradient(135deg,#087443,#31b96f);color:#fff;padding:12px 6%;display:flex;justify-content:space-between;position:sticky;top:0;z-index:10}
-.header-right{display:flex;gap:6px}select{padding:8px;border:0;border-radius:8px;font-weight:bold}
-.container{max-width:1050px;margin:auto;padding:20px 15px}.card{background:#fff;padding:20px;border-radius:19px;box-shadow:0 6px 25px rgba(0,0,0,.07)}
-input,select{width:100%;padding:12px;border:1px solid #b9d6c3;border-radius:10px;margin:7px 0 14px}.btn{border:0;background:#14834f;color:#fff;padding:12px;border-radius:11px;font-weight:bold;cursor:pointer;width:100%}
-#preview{width:100%;max-height:300px;object-fit:contain;display:none;margin:10px 0;border-radius:14px}
-.nav{display:flex;gap:8px;margin-bottom:15px}.nav button{border:0;padding:10px 14px;border-radius:12px;background:#dff3e6;font-weight:bold;cursor:pointer}.nav button.active{background:#14834f;color:#fff}
-.page{display:none}.page.active{display:block}.qr-box{background:#000;color:#fff;padding:20px;border-radius:20px;text-align:center}.paypal-box{background:#e6f0ff;border:2px solid #0070ba;padding:20px;border-radius:20px;text-align:center}.qrimg{width:300px;max-width:90%;background:#fff;padding:12px;border-radius:15px}
-</style></head><body>
-<header><div>🌱 Plant Doctor</div><div class="header-right"><select id="lang"><option value="hi">हिन्दी</option><option value="en">English</option></select><select id="country"><option value="IN">India</option><option value="US">USA</option></select></div></header>
-<div class="container">
-<div class="nav">
-<button class="active" data-page="check" onclick="showPage('check',this)">📷 Plant Check</button>
-<button data-page="premium" onclick="showPage('premium',this)">⭐ Premium</button>
-<button data-page="owner" onclick="showPage('owner',this)">👨‍💼 Owner</button>
+<!-- SABKO DIKHEGA -->
+<div>
+  <h3>Deposit Offer (Demo)</h3>
+  <img id="mainOfferImg" src="" style="width:100%; max-width:300px; display:none; border-radius:10px">
+  <p id="noImgText" style="color:gray; font-size:12px">Abhi koi offer image nahi hai</p>
 </div>
 
-<section id="check" class="page active"><div class="card">
-<h2>📷 Plant Check</h2><input id="photo" type="file" accept="image/*"><img id="preview">
-<input placeholder="Tomato, Potato"><select><option>Yellow leaves</option><option>Brown spots</option></select>
-<button class="btn" id="analyze">🔍 Check with AI</button><div id="result"></div><p id="premiumStatus"></p>
-</div></section>
+<!-- SIRF TU DEKHEGA - Admin Box -->
+<div style="margin-top:20px; background:#f5f5f5; padding:10px; border-radius:8px">
+  <input type="password" id="adminPass" placeholder="Admin password">
+  <button onclick="adminLogin()">Login</button>
 
-<section id="premium" class="page"><div class="card">
-<h2>⭐ Premium - <span id="price">₹100 Lifetime</span></h2>
-
-<div id="indiaPay" class="qr-box">
-<h2 style="color:#9d6eff">PhonePe - ACCEPTED HERE</h2><p>Scan any QR using PhonePe App</p>
-<img src="data:image/jpeg;base64,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" alt="PhonePe QR"><p><b>ROHIT KUMAR</b></p></div>
-<div id="usBox" class="paypalbox" style="display:none"><h2>PayPal</h2><p>USA - $4.99</p><a href="https://www.paypal.me/RohitKumar313807" target="_blank"><button class="btn" style="background:#0070ba">💳 Pay $4.99 via PayPal</button></a><p>paypal.me/RohitKumar313807</p></div>
-<br><input id="utr" placeholder="Transaction ID dalo" style="width:100%;padding:12px;border:1px solid #ccc;border-radius:10px"><br><br>
-<button class="btn" style="background:#5f259f" onclick="localStorage.setItem('plantDoctorIsPremium','true');alert('✅ Premium ON!');location.reload()">✅ Maine Payment Kar Diya</button>
-</div></section>
-
-<section id="owner" class="page"><div class="card"><h2>👨‍💼 Owner</h2><input id="pinSet" type="password" placeholder="4 digit PIN"><button class="btn" onclick="localStorage.setItem('pdPin',document.getElementById('pinSet').value);alert('Owner Set')">🔐 Set PIN</button><br><br><input id="pinLogin" type="password" placeholder="PIN"><button class="btn" onclick="if(document.getElementById('pinLogin').value===localStorage.getItem('pdPin')){document.getElementById('admin').innerHTML='<div style=background:#d4edda;padding:10px;border-radius:8px>✅ Owner Login OK</div>'}else{alert('Wrong PIN')}">👤 Login</button><div id="admin"></div></div></section>
+  <div id="uploadArea" style="display:none; margin-top:10px">
+    <p><b>Sirf Admin:</b> Image dalo</p>
+    <input type="file" id="adminImg" accept="image/*" onchange="adminUpload(event)">
+    <button onclick="removeImg()" style="margin-left:10px; color:red">Image Hatao</button>
+  </div>
 </div>
+
 <script>
-function showPage(id,btn){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));btn.classList.add('active')}
-document.getElementById('country').onchange=function(){var isUS=this.value=='US';document.getElementById('price').textContent=isUS?'$4.99 Lifetime':'₹100 Lifetime';document.getElementById('indiaPay').style.display=isUS?'none':'block';document.getElementById('usBox').style.display=isUS?'block':'none'}
-</script></body></html>
+let isAdmin = false;
+function adminLogin(){
+  if(document.getElementById('adminPass').value === "admin123"){
+    isAdmin = true;
+    document.getElementById('uploadArea').style.display = "block";
+    alert("Login ho gaya - ab sirf tu image daal sakta hai");
+  } else { alert("Galat password"); }
+}
+
+function adminUpload(e){
+  if(!isAdmin) return;
+  let file = e.target.files[0];
+  let reader = new FileReader();
+  reader.onload = function(){
+    let base64 = reader.result;
+    localStorage.setItem('offerImg', base64);
+    showImg(base64);
+  }
+  reader.readAsDataURL(file);
+}
+
+function showImg(src){
+  document.getElementById('mainOfferImg').src = src;
+  document.getElementById('mainOfferImg').style.display = "block";
+  document.getElementById('noImgText').style.display = "none";
+}
+
+function removeImg(){
+  if(!isAdmin) return;
+  localStorage.removeItem('offerImg');
+  document.getElementById('mainOfferImg').style.display = "none";
+  document.getElementById('noImgText').style.display = "block";
+}
+
+// Page khulte hi check karo image hai ya nahi
+let saved = localStorage.getItem('offerImg');
+if(saved) showImg(saved);
+</script>
